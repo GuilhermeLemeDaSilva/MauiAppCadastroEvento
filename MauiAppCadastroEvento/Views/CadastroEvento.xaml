@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+    
+<ContentPage 
+ xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+ x:Class="MauiAppCadastroEvento.Views.CadastroEvento"
+ Title="CadastroEvento"
+ NavigationPage.HasNavigationBar="False"
+ BackgroundColor="{StaticResource MidnightBlue}"
+>
+    
+ <VerticalStackLayout 
+  VerticalOptions="CenterAndExpand"
+  Spacing="10"
+  Padding="10"
+ >
+     
+  <Label 
+   Text="CADASTRO DE EVENTO"
+   VerticalOptions="Center" 
+   HorizontalOptions="Center"
+   Padding="10"
+   FontSize="30"
+   TextColor="LightGray"
+   FontFamily="QB"
+  />
+
+  <Frame Padding="10">
+   <VerticalStackLayout Padding="5" Spacing="10">
+    <Label
+     HorizontalOptions="Center"
+     Text="Nome do Evento:"
+     Padding="5"
+     FontFamily="QS"
+    />
+    <Entry 
+     x:Name="nome_evento"
+     Placeholder="Digite Aqui.."
+    />
+
+    <Label
+     Text="Local do Evento:"
+     HorizontalOptions="Center"
+     Padding="5" 
+     FontFamily="QS"
+    />
+    <Entry
+     x:Name="local_evento"
+     Placeholder="Digite Aqui..."
+     
+    />
+
+    <Label
+     Text="Custo por Participante:"
+     HorizontalOptions="Center"
+     Padding="5"
+     FontFamily="QS"
+    />
+    <Entry
+     x:Name="custo_participante"
+     Placeholder="R$..."
+    />
+
+    <Frame>
+     <VerticalStackLayout>
+      <Grid 
+       RowDefinitions="Auto"
+       ColumnDefinitions="*, *, *"
+      >
+       <Label 
+        Grid.Row="0" 
+        Grid.Column="0"
+        Text="Participantes:"
+        FontFamily="QS"
+       />
+       <Label 
+        Grid.Row="0" 
+        Grid.Column="1"
+        TextColor="BlueViolet"
+        Text="{Binding Source={x:Reference stp_participantes}, Path=Value}" 
+       />
+       <Stepper 
+        Grid.Row="0" 
+        Grid.Column="2"
+        x:Name="stp_participantes"
+        Minimum="0"
+        Maximum="1000"
+        Increment="1" 
+       />
+      </Grid>
+      </VerticalStackLayout> 
+    </Frame>   
+      
+    <Frame Padding="10">
+     <VerticalStackLayout>
+      <Label 
+       Text="Data de início:"
+       HorizontalOptions="Center"
+       Padding="5"
+       FontFamily="QS"
+      />
+      <DatePicker
+       x:Name="dtpck_inicio"
+       Format="dd/MM/yyyy"
+       HorizontalOptions="Center"
+       DateSelected="dtpck_inicio_DateSelected"
+      />
+      <Label 
+       Text="Data de término:"
+       HorizontalOptions="Center"
+       Padding="5"
+       FontFamily="QS"
+      />
+      <DatePicker
+       x:Name="dtpck_termino"
+       Format="dd/MM/yyyy"
+       HorizontalOptions="Center"
+       />
+     </VerticalStackLayout> 
+    </Frame>
+    <Button
+     Clicked="Button_Clicked"
+     Text="AVANÇAR"
+     Padding="5"
+     BackgroundColor="BlueViolet"
+     FontFamily="QS"
+    />
+   </VerticalStackLayout>
+  </Frame>
+ </VerticalStackLayout>
+</ContentPage>
