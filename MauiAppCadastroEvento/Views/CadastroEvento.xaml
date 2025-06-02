@@ -61,36 +61,17 @@
      Placeholder="R$..."
     />
 
-    <Frame>
-     <VerticalStackLayout>
-      <Grid 
-       RowDefinitions="Auto"
-       ColumnDefinitions="*, *, *"
-      >
-       <Label 
-        Grid.Row="0" 
-        Grid.Column="0"
-        Text="Participantes:"
-        FontFamily="QS"
-       />
-       <Label 
-        Grid.Row="0" 
-        Grid.Column="1"
-        TextColor="BlueViolet"
-        Text="{Binding Source={x:Reference stp_participantes}, Path=Value}" 
-       />
-       <Stepper 
-        Grid.Row="0" 
-        Grid.Column="2"
-        x:Name="stp_participantes"
-        Minimum="0"
-        Maximum="1000"
-        Increment="1" 
-       />
-      </Grid>
-      </VerticalStackLayout> 
-    </Frame>   
-      
+    <Label
+     Text="Número de Participantes:"
+     HorizontalOptions="Center"
+     Padding="5"
+     FontFamily="QS"
+    />
+    <Entry
+     x:Name="numero_participantes"
+     Placeholder="Digite Aqui..."
+    />
+ 
     <Frame Padding="10">
      <VerticalStackLayout>
       <Label 

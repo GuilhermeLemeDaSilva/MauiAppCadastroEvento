@@ -24,7 +24,7 @@ public partial class CadastroEvento : ContentPage
                 Local = local_evento.Text,
                 Custo = decimal.Parse(custo_participante.Text),
                 Nome = nome_evento.Text,
-                Participantes = Convert.ToInt32(stp_participantes.Value),
+                Participantes = int.Parse(numero_participantes.Text),
                 DataInicio = dtpck_inicio.Date,
                 DataTermino = dtpck_termino.Date,
             };
